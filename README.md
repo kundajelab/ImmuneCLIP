@@ -24,6 +24,18 @@ CLIP-based model for aligning epitopes to immune receptors
 
 
 ## CLI:
+### Environment Variables
+To run this application, set the following environment variables
+```
+WANDB_OUTPUT_DIR=<path to output dir>
+```
+
+Additionally, if training on top of a custom in-house TCR model, the following path needs to be set
+```
+INHOUSE_MODEL_CKPT_PATH=<path to custom model file>
+```
+
+
 ### Training
 ```
 # go to root directory of the repo, and then run:
