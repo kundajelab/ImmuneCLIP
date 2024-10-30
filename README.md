@@ -1,5 +1,5 @@
 # ImmuneCLIP
-CLIP-based model for aligning epitopes to immune receptors
+CLIP-based model for aligning epitopes to immune receptors.
 
 🚧 This repository is under active construction 🚧
 
