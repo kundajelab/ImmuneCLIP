@@ -1,4 +1,4 @@
-name: antibody_py310
+name: immuneclip
 channels:
   - defaults
 dependencies:
