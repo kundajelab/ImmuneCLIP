@@ -1,5 +1,5 @@
 # ImmuneCLIP
-CLIP-based model for aligning epitopes to immune receptors. [[preprint](https://www.biorxiv.org/content/10.1101/2024.10.25.619698v1)]
+Code for paper "Sequence-based TCR-Peptide Representations Using Cross-Epitope Contrastive Fine-tuning of Protein Language Models." [[preprint](https://www.biorxiv.org/content/10.1101/2024.10.25.619698v1)]
 
 🚧 This repository is under active construction. 🚧
 
