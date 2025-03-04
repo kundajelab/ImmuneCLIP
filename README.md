@@ -22,6 +22,8 @@ Code for paper "Sequence-based TCR-Peptide Representations Using Cross-Epitope C
 * MixTCRPred Dataset ([paper](https://github.com/GfellerLab/MixTCRpred/tree/main))
   * Contains curated mixture of TCR-pMHC sequence data from IEDB, VDJdb, 10x Genomics, and McPAS-TCR
 
+## Pre-trained Weights:
+* The pre-trained weights for ImmuneCLIP is deposited at [Zenodo](https://zenodo.org/records/14962685)
 
 ## CLI:
 ### Environment Variables
