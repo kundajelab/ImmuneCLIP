@@ -38,15 +38,20 @@ class EpitopeEncoderESM(nn.Module):
                                     nn.Linear(input_dim, hidden_dim),
                                     nn.LayerNorm(hidden_dim),
                                     nn.LeakyReLU(),
-                                    nn.Dropout(p=0.5),
+                                    nn.Dropout(p=0.3),
                                     nn.Linear(hidden_dim, projection_dim),
                                 )
+                # Initialize the projection head weights
+                nn.init.kaiming_uniform_(self.proj_head[0].weight)
+                nn.init.kaiming_uniform_(self.proj_head[-1].weight)
             else:
                 print("Using single-layer projection head")
                 self.proj_head = nn.Sequential(
                                     nn.Linear(input_dim, projection_dim),
                                     nn.LayerNorm(projection_dim),
                                 )
+                # Initialize the projection head weights
+                nn.init.kaiming_uniform_(self.proj_head[0].weight)
         else:
             print("NOT using projection head")
         
@@ -56,7 +61,7 @@ class EpitopeEncoderESM(nn.Module):
             self.proj_head = nn.Sequential(
                                 nn.Linear(projection_dim, projection_dim // 2),
                                 nn.LayerNorm(projection_dim // 2),
-                            )
+                            )   
 
         self.device = device
 
@@ -282,15 +287,20 @@ class TCREncoderTCRBert(nn.Module):
                                 nn.Linear(input_dim, hidden_dim),
                                 nn.LayerNorm(hidden_dim),
                                 nn.LeakyReLU(),
-                                nn.Dropout(p=0.5),
+                                nn.Dropout(p=0.3),
                                 nn.Linear(hidden_dim, projection_dim),
                             )
+            # Initialize the projection head weights
+            nn.init.kaiming_uniform_(self.proj_head[0].weight)
+            nn.init.kaiming_uniform_(self.proj_head[-1].weight)
         else:
             print("Using single-layer projection head")
             self.proj_head = nn.Sequential(
                                 nn.Linear(input_dim, projection_dim),
                                 nn.LayerNorm(projection_dim),
                             )
+            # Initialize the projection head weights
+            nn.init.kaiming_uniform_(self.proj_head[0].weight)
 
         if self.ln_config.swe_pooling:
             self.swe_pooling_a = SWE_Pooling(d_in=input_dim // 2, num_ref_points=256, num_slices=projection_dim // 2)
